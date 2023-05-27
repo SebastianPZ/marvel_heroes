@@ -23,9 +23,9 @@ class HeroCarouselItemView extends StatelessWidget {
       elevation: 10,
       clipBehavior: Clip.hardEdge,
       color: primaryColor,
-      shape: const BeveledRectangleBorder(
+      shape: BeveledRectangleBorder(
         borderRadius: BorderRadius.only(
-          bottomRight: Radius.circular(50)
+          bottomRight: Radius.circular(size.height * 0.07)
         )
       ),
       child: Stack(
@@ -50,6 +50,19 @@ class HeroCarouselItemView extends StatelessWidget {
                 child: Text(
                   hero.name,
                   style: marvelMainHeroNameStyle(size: size),),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: EdgeInsets.only(right: size.height * 0.065, bottom: size.height * 0.02),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text("View detail", style: descriptionHeroStyle(size: size),),
+                  Icon(Icons.arrow_forward_ios_outlined, color: Colors.white, size: size.height * 0.015,)
+                ],
               ),
             ),
           )

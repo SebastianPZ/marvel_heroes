@@ -16,8 +16,8 @@ class SeriesItemView extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return SizedBox(
-      height: size.height * 0.22,
-      width: size.width * 0.25,
+      height: size.height * 0.24,
+      width: size.width * 0.26,
       child: Card(
         elevation: 5,
         clipBehavior: Clip.hardEdge,
@@ -40,12 +40,14 @@ class SeriesItemView extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                padding: const EdgeInsets.only(left: 10, top: 10),
+                padding: const EdgeInsets.all(10),
                 width: size.width * 0.5,
-                height: size.height * 0.08,
+                height: size.height * 0.09,
                 color: Colors.black,
                 child: Text(
                   series.title,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
                   style: descriptionHeroStyle(size: size),),
               ),
             )
